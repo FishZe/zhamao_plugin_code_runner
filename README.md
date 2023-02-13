@@ -6,7 +6,7 @@ php > 8.0
 
 ### 安装
 ```
-./zhaomao plugin:install https://github.com/FishZe/zhamao_plugin_code_runner
+./zhamao plugin:install https://github.com/FishZe/zhamao_plugin_code_runner
 ```
 
 ### 使用
