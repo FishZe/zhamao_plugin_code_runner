@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CodeRunner;
+namespace fishze;
 
 use ZM\Utils\ZMRequest;
 
@@ -84,17 +84,17 @@ class CodeRunner
         if (!$response) return "请求失败, 请检查网络或稍后再试";
         $response = json_decode($response, true);
         return ($response == NULL || $response == []) ? "" :
-            ($response["error"] != "" || $response["stdout"] != "" ? "运行成功:\n" : "运行失败:\n" ) .
+            ($response["error"] != "" || $response["stdout"] != "" ? "运行成功:\n" : "运行失败:\n") .
             $response['stdout'] .
             ($response['stderr'] == "" ? "" : "\n" . $response['stderr']);
     }
 
-    #[\BotCommand(name: 'codeRunner',match: '运行代码',alias: ["code", "代码运行", "codeRunner"])]
+    #[\BotCommand(name: 'codeRunner', match: '运行代码', alias: ["code", "代码运行", "codeRunner"])]
     #[\CommandArgument(name: 'lang', type: 'string', required: false)]
     public function codeRunnerCommand(\BotContext $ctx): void
     {
         if ($ctx->getParam('lang') == null) {
-            $lang = $ctx->prompt("请选择一种语言:\n" . implode("; ", $this->getAllLanguages()), 30, "没有收到你的回复哦",  ZM_PROMPT_RETURN_STRING);
+            $lang = $ctx->prompt("请选择一种语言:\n" . implode("; ", $this->getAllLanguages()), 30, "没有收到你的回复哦", ZM_PROMPT_RETURN_STRING);
         } else {
             $lang = $ctx->getParam('lang');
         }
