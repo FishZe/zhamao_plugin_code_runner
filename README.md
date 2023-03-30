@@ -1,12 +1,16 @@
 ## 疯狂星期四插件
 
 ### 要求
+
+需要协程环境
+
 炸毛框架 > 3.0.2
-php > 8.0
+
+php > 8.1 或框架Driver为swoole (默认workerman)
 
 ### 安装
 ```
-./zhaomao plugin:install https://github.com/FishZe/zhamao_plugin_code_runner
+./zhamao plugin:install https://github.com/FishZe/zhamao_plugin_code_runner
 ```
 
 ### 使用
